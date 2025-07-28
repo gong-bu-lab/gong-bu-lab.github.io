@@ -1,4 +1,5 @@
 import { getAllMarkdownFilesInDirectory, markdownToHtml } from '@/lib/markdown';
+import Image from 'next/image';
 
 export default async function People() {
   const peopleFiles = getAllMarkdownFilesInDirectory('people');
@@ -57,11 +58,23 @@ export default async function People() {
                   <div className="p-8">
                     <div className="flex items-center space-x-6">
                       <div className="flex-shrink-0">
-                        <div className="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
-                          <span className="text-2xl font-bold text-gray-600">
-                            {member.data.name.split(' ').map((n: string) => n[0]).join('')}
-                          </span>
-                        </div>
+                        {member.data.image && member.data.image !== "/api/placeholder/300/300" ? (
+                          <div className="w-24 h-24 rounded-full overflow-hidden">
+                            <Image
+                              src={member.data.image}
+                              alt={member.data.name}
+                              width={96}
+                              height={96}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ) : (
+                          <div className="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
+                            <span className="text-2xl font-bold text-gray-600">
+                              {member.data.name.split(' ').map((n: string) => n[0]).join('')}
+                            </span>
+                          </div>
+                        )}
                       </div>
                       <div className="flex-1">
                         <h3 className="text-2xl font-bold text-gray-900">{member.data.name}</h3>
@@ -93,11 +106,23 @@ export default async function People() {
                 <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
                   <div className="p-6">
                     <div className="text-center">
-                      <div className="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-xl font-bold text-gray-600">
-                          {member.data.name.split(' ').map((n: string) => n[0]).join('')}
-                        </span>
-                      </div>
+                      {member.data.image && member.data.image !== "/api/placeholder/300/300" ? (
+                        <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4">
+                          <Image
+                            src={member.data.image}
+                            alt={member.data.name}
+                            width={80}
+                            height={80}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-xl font-bold text-gray-600">
+                            {member.data.name.split(' ').map((n: string) => n[0]).join('')}
+                          </span>
+                        </div>
+                      )}
                       <h3 className="text-xl font-bold text-gray-900">{member.data.name}</h3>
                       <p className="text-blue-600 font-medium">{member.data.title}</p>
                       <p className="text-gray-600 mt-2 text-sm">{member.data.research}</p>
@@ -126,11 +151,23 @@ export default async function People() {
                 <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
                   <div className="p-6">
                     <div className="text-center">
-                      <div className="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-xl font-bold text-gray-600">
-                          {member.data.name.split(' ').map((n: string) => n[0]).join('')}
-                        </span>
-                      </div>
+                      {member.data.image && member.data.image !== "/api/placeholder/300/300" ? (
+                        <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4">
+                          <Image
+                            src={member.data.image}
+                            alt={member.data.name}
+                            width={80}
+                            height={80}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-xl font-bold text-gray-600">
+                            {member.data.name.split(' ').map((n: string) => n[0]).join('')}
+                          </span>
+                        </div>
+                      )}
                       <h3 className="text-xl font-bold text-gray-900">{member.data.name}</h3>
                       <p className="text-blue-600 font-medium">{member.data.title}</p>
                       <p className="text-gray-600 mt-2 text-sm">{member.data.research}</p>
@@ -159,11 +196,23 @@ export default async function People() {
                 <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
                   <div className="p-6">
                     <div className="text-center">
-                      <div className="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-xl font-bold text-gray-600">
-                          {member.data.name.split(' ').map((n: string) => n[0]).join('')}
-                        </span>
-                      </div>
+                      {member.data.image && member.data.image !== "/api/placeholder/300/300" ? (
+                        <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4">
+                          <Image
+                            src={member.data.image}
+                            alt={member.data.name}
+                            width={80}
+                            height={80}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-xl font-bold text-gray-600">
+                            {member.data.name.split(' ').map((n: string) => n[0]).join('')}
+                          </span>
+                        </div>
+                      )}
                       <h3 className="text-xl font-bold text-gray-900">{member.data.name}</h3>
                       <p className="text-blue-600 font-medium">{member.data.title}</p>
                       <p className="text-gray-600 mt-2 text-sm">{member.data.research}</p>

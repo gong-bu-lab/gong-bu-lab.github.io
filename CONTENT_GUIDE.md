@@ -60,6 +60,22 @@ Alex is researching reinforcement learning algorithms for autonomous systems.
 - `graduate`: Ph.D. and M.S. students
 - `undergraduate`: Undergraduate researchers
 
+### 4. Adding Profile Pictures
+
+To add a profile picture for a lab member:
+
+1. **Save the image** in `public/people/` directory
+2. **Use the filename** in the `image` field of the markdown file
+3. **Recommended format**: JPG or PNG, 300x300 pixels or larger
+4. **File naming**: Use lowercase with hyphens (e.g., `firstname-lastname.jpg`)
+
+Example:
+```yaml
+image: "/people/wei-gong.jpg"
+```
+
+If no image is provided, the website will display the person's initials in a circular background.
+
 ## Adding Publications
 
 ### 1. Create a new markdown file in `content/publications/`
