@@ -43,7 +43,7 @@ export default function News() {
                   </div>
                   <div className="p-8">
                     <div className="flex items-center space-x-2 mb-4">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">
                         {item.data.category}
                       </span>
                       <span className="text-gray-500 text-sm">{item.data.date}</span>
@@ -65,7 +65,7 @@ export default function News() {
       <div className="bg-gray-50 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-3">
-            <button className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium bg-blue-600 text-white border border-blue-600 transition-colors duration-200">
+            <button className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium bg-red-600 text-white border border-red-600 transition-colors duration-200">
               All
             </button>
             {categories.map((category, index) => (
@@ -92,48 +92,19 @@ export default function News() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center space-x-2 mb-3">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
                       {item.data.category}
                     </span>
                     <span className="text-gray-500 text-xs">{item.data.date}</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{item.data.title}</h3>
                   <p className="text-gray-600 text-sm mb-4">{item.data.excerpt}</p>
-                  <button className="text-blue-600 hover:text-blue-800 font-medium text-sm">
+                  <button className="text-red-600 hover:text-red-800 font-medium text-sm">
                     Read more →
                   </button>
                 </div>
               </article>
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Newsletter Signup */}
-      <div className="bg-blue-600">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-              Stay Updated
-            </h2>
-            <p className="mt-4 text-xl text-blue-100">
-              Subscribe to our newsletter to receive the latest news and updates from the Gong Lab.
-            </p>
-            <div className="mt-8 max-w-md mx-auto">
-              <div className="flex rounded-md shadow-sm">
-                <input
-                  type="email"
-                  className="flex-1 min-w-0 block w-full px-3 py-3 rounded-l-md border-0 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  placeholder="Enter your email"
-                />
-                <button
-                  type="submit"
-                  className="inline-flex items-center px-4 py-3 border border-transparent text-sm font-medium rounded-r-md text-blue-600 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>

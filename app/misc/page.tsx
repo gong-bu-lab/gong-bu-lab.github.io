@@ -167,7 +167,7 @@ export default function Misc() {
       </div>
 
       {/* Fun Facts */}
-      <div className="py-16 bg-blue-600">
+      <div className="py-16 bg-red-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Fun Facts About Our Lab</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -222,7 +222,7 @@ export default function Misc() {
       </div>
 
       {/* Join Our Community */}
-      <div className="bg-gray-50 py-16">
+      {/* <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -236,7 +236,7 @@ export default function Misc() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/people"
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 transition-colors duration-200"
               >
                 Meet Our Team
               </a>
@@ -249,7 +249,7 @@ export default function Misc() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Photo Gallery Placeholder */}
       <div className="py-16">
@@ -261,11 +261,6 @@ export default function Misc() {
                 <span className="text-gray-600 font-medium">Photo {i + 1}</span>
               </div>
             ))}
-          </div>
-          <div className="text-center mt-8">
-            <p className="text-gray-600">
-              More photos coming soon! Follow us on social media for regular updates.
-            </p>
           </div>
         </div>
       </div>

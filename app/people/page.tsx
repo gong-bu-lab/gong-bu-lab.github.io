@@ -78,11 +78,11 @@ export default async function People() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-2xl font-bold text-gray-900">{member.data.name}</h3>
-                        <p className="text-lg text-blue-600 font-medium">{member.data.title}</p>
+                        <p className="text-lg text-red-600 font-medium">{member.data.title}</p>
                         {member.data.date && (
                           <p className="text-gray-600 mt-2">{member.data.date}</p>
                         )}
-                        <a href={`mailto:${member.data.email}`} className="text-blue-600 hover:text-blue-800 mt-2 inline-block">
+                        <a href={`mailto:${member.data.email}`} className="text-red-600 hover:text-red-800 mt-2 inline-block">
                           {member.data.email}
                         </a>
                       </div>
@@ -126,9 +126,9 @@ export default async function People() {
                         </div>
                       )}
                       <h3 className="text-xl font-bold text-gray-900">{member.data.name}</h3>
-                      <p className="text-blue-600 font-medium">{member.data.title}</p>
+                      <p className="text-red-600 font-medium">{member.data.title}</p>
                       <p className="text-gray-600 mt-2 text-sm">{member.data.research}</p>
-                      <a href={`mailto:${member.data.email}`} className="text-blue-600 hover:text-blue-800 mt-2 inline-block text-sm">
+                      <a href={`mailto:${member.data.email}`} className="text-red-600 hover:text-red-800 mt-2 inline-block text-sm">
                         {member.data.email}
                       </a>
                     </div>
@@ -171,11 +171,11 @@ export default async function People() {
                         </div>
                       )}
                       <h3 className="text-xl font-bold text-gray-900">{member.data.name}</h3>
-                      <p className="text-blue-600 font-medium">{member.data.title}</p>
+                      <p className="text-red-600 font-medium">{member.data.title}</p>
                       {member.data.date && (
                         <p className="text-gray-600 mt-2 text-sm">{member.data.date}</p>
                       )}
-                      <a href={`mailto:${member.data.email}`} className="text-blue-600 hover:text-blue-800 mt-2 inline-block text-sm">
+                      <a href={`mailto:${member.data.email}`} className="text-red-600 hover:text-red-800 mt-2 inline-block text-sm">
                         {member.data.email}
                       </a>
                     </div>
@@ -218,11 +218,11 @@ export default async function People() {
                         </div>
                       )}
                       <h3 className="text-xl font-bold text-gray-900">{member.data.name}</h3>
-                      <p className="text-blue-600 font-medium">{member.data.title}</p>
+                      <p className="text-red-600 font-medium">{member.data.title}</p>
                       {member.data.date && (
                         <p className="text-gray-600 mt-2 text-sm">{member.data.date}</p>
                       )}
-                      <a href={`mailto:${member.data.email}`} className="text-blue-600 hover:text-blue-800 mt-2 inline-block text-sm">
+                      <a href={`mailto:${member.data.email}`} className="text-red-600 hover:text-red-800 mt-2 inline-block text-sm">
                         {member.data.email}
                       </a>
                     </div>
@@ -247,7 +247,7 @@ export default async function People() {
                 <div className="p-6">
                   <div className="text-center">
                     <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-                    <p className="text-blue-600 font-medium">{member.title}</p>
+                                          <p className="text-red-600 font-medium">{member.title}</p>
                     <p className="text-gray-600 mt-2 text-sm">{member.current}</p>
                     <p className="text-gray-500 mt-1 text-sm">Graduated: {member.year}</p>
                   </div>
@@ -259,19 +259,19 @@ export default async function People() {
       </div> */}
 
       {/* Join Us Section */}
-      <div className="bg-blue-600">
+                  <div className="bg-red-600">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
               Interested in joining our lab?
             </h2>
-            <p className="mt-4 text-xl text-blue-100">
+            <p className="mt-4 text-xl text-red-100">
               We're always looking for talented researchers and students to join our team.
             </p>
             <div className="mt-8">
               <a
-                href="mailto:wei.gong@university.edu"
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors duration-200"
+                href="mailto:boqinggo@outlook.com"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-red-600 bg-white hover:bg-gray-50 transition-colors duration-200"
               >
                 Contact Us
               </a>
