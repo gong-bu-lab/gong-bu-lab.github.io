@@ -10,7 +10,7 @@ export default async function People() {
   const graduate = peopleFiles.filter(p => p.data.category === 'graduate');
   const undergraduate = peopleFiles.filter(p => p.data.category === 'undergraduate');
 
-  const alumni = [
+  {/* const alumni = [
     {
       name: "Dr. Jennifer Lee",
       title: "Former Ph.D. Student",
@@ -29,7 +29,7 @@ export default async function People() {
       current: "Machine Learning Engineer at Microsoft",
       year: "2022"
     }
-  ];
+  ]; */}
 
   return (
     <div className="bg-white">
@@ -79,7 +79,9 @@ export default async function People() {
                       <div className="flex-1">
                         <h3 className="text-2xl font-bold text-gray-900">{member.data.name}</h3>
                         <p className="text-lg text-blue-600 font-medium">{member.data.title}</p>
-                        <p className="text-gray-600 mt-2">{member.data.research}</p>
+                        {member.data.date && (
+                          <p className="text-gray-600 mt-2">{member.data.date}</p>
+                        )}
                         <a href={`mailto:${member.data.email}`} className="text-blue-600 hover:text-blue-800 mt-2 inline-block">
                           {member.data.email}
                         </a>
@@ -97,7 +99,7 @@ export default async function People() {
       )}
 
       {/* Postdocs */}
-      {postdocs.length > 0 && (
+      {/* {postdocs.length > 0 && (
         <div className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-extrabold text-gray-900 mb-12">Postdoctoral Researchers</h2>
@@ -139,11 +141,11 @@ export default async function People() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Graduate Students */}
       {graduate.length > 0 && (
-        <div className="py-16">
+        <div className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-extrabold text-gray-900 mb-12">Graduate Students</h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -170,7 +172,9 @@ export default async function People() {
                       )}
                       <h3 className="text-xl font-bold text-gray-900">{member.data.name}</h3>
                       <p className="text-blue-600 font-medium">{member.data.title}</p>
-                      <p className="text-gray-600 mt-2 text-sm">{member.data.research}</p>
+                      {member.data.date && (
+                        <p className="text-gray-600 mt-2 text-sm">{member.data.date}</p>
+                      )}
                       <a href={`mailto:${member.data.email}`} className="text-blue-600 hover:text-blue-800 mt-2 inline-block text-sm">
                         {member.data.email}
                       </a>
@@ -188,7 +192,7 @@ export default async function People() {
 
       {/* Undergraduate Students */}
       {undergraduate.length > 0 && (
-        <div className="py-16 bg-gray-50">
+        <div className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-extrabold text-gray-900 mb-12">Undergraduate Researchers</h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -215,7 +219,9 @@ export default async function People() {
                       )}
                       <h3 className="text-xl font-bold text-gray-900">{member.data.name}</h3>
                       <p className="text-blue-600 font-medium">{member.data.title}</p>
-                      <p className="text-gray-600 mt-2 text-sm">{member.data.research}</p>
+                      {member.data.date && (
+                        <p className="text-gray-600 mt-2 text-sm">{member.data.date}</p>
+                      )}
                       <a href={`mailto:${member.data.email}`} className="text-blue-600 hover:text-blue-800 mt-2 inline-block text-sm">
                         {member.data.email}
                       </a>
@@ -232,7 +238,7 @@ export default async function People() {
       )}
 
       {/* Alumni */}
-      <div className="py-16">
+      {/*<div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-gray-900 mb-12">Alumni</h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -250,7 +256,7 @@ export default async function People() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Join Us Section */}
       <div className="bg-blue-600">
