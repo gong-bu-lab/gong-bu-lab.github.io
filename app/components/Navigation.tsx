@@ -10,7 +10,6 @@ export default function Navigation() {
     { href: '/', label: 'Home' },
     { href: '/people', label: 'People' },
     { href: '/publications', label: 'Publications' },
-    { href: '/news', label: 'News' },
     { href: '/misc', label: 'Misc' },
   ];
 

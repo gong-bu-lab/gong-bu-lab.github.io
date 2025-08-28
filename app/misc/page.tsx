@@ -1,24 +1,13 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { getAllMarkdownFilesInDirectory } from '@/lib/markdown';
+
 export default function Misc() {
-  const events = [
-    {
-      title: "Lab Retreat 2024",
-      date: "March 2024",
-      description: "Annual lab retreat in the mountains where we discuss research, share ideas, and enjoy outdoor activities.",
-      image: "/api/placeholder/400/300"
-    },
-    {
-      title: "Holiday Party",
-      date: "December 2023",
-      description: "End-of-year celebration with food, games, and a white elephant gift exchange.",
-      image: "/api/placeholder/400/300"
-    },
-    {
-      title: "Summer BBQ",
-      date: "July 2023",
-      description: "Outdoor barbecue with lab members and their families, featuring research presentations and networking.",
-      image: "/api/placeholder/400/300"
-    }
-  ];
+  // Get events from markdown files
+  const eventFiles = getAllMarkdownFilesInDirectory('misc');
+  const events = eventFiles
+    .filter(file => file.data.category === 'event')
+    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
   const activities = [
     {
@@ -112,7 +101,7 @@ export default function Misc() {
       </div>
 
       {/* Lab Values */}
-      <div className="py-16">
+      {/* <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Our Values</h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -125,10 +114,10 @@ export default function Misc() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Lab Activities */}
-      <div className="py-16 bg-gray-50">
+      {/* <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Lab Activities</h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -141,7 +130,7 @@ export default function Misc() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Events */}
       <div className="py-16">
@@ -149,25 +138,45 @@ export default function Misc() {
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Recent Events</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {events.map((event, index) => (
-              <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
-                <div className="h-48 bg-gray-300 flex items-center justify-center">
-                  <span className="text-gray-600 font-medium">Event Photo</span>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-bold text-gray-900">{event.title}</h3>
-                    <span className="text-sm text-gray-500">{event.date}</span>
+              <Link 
+                key={index} 
+                href={`/misc/${event.data.slug}`}
+                className="block group"
+              >
+                <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+                  <div className="h-48 overflow-hidden">
+                    {event.data.image ? (
+                      <Image
+                        src={event.data.image}
+                        alt={event.data.title}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gray-300 flex items-center justify-center">
+                        <span className="text-gray-600 font-medium">Event Photo</span>
+                      </div>
+                    )}
                   </div>
-                  <p className="text-gray-600">{event.description}</p>
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-200">
+                        {event.data.title}
+                      </h3>
+                      <span className="text-sm text-gray-500">{event.data.date}</span>
+                    </div>
+                    <p className="text-gray-600">{event.data.summary}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </div>
 
       {/* Fun Facts */}
-      <div className="py-16 bg-red-600">
+      {/* <div className="py-16 bg-red-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Fun Facts About Our Lab</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -178,7 +187,7 @@ export default function Misc() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Lab Environment */}
       <div className="py-16">
@@ -187,35 +196,17 @@ export default function Misc() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Lab Environment</h2>
               <p className="text-gray-600 mb-6">
-                The Gong Lab is located in a modern research facility with state-of-the-art computing resources, 
-                collaborative workspaces, and comfortable meeting areas. Our lab space is designed to foster 
-                creativity, collaboration, and productivity.
+                From our lab, the Charles River can be seen flowing gently, providing a serene backdrop for our research activities.
               </p>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-3">✓</span>
-                  High-performance computing clusters
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-3">✓</span>
-                  Collaborative meeting spaces
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-3">✓</span>
-                  Quiet areas for focused work
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-3">✓</span>
-                  Coffee and snack areas
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-3">✓</span>
-                  Whiteboards and presentation equipment
-                </li>
-              </ul>
             </div>
-            <div className="bg-gray-300 h-96 rounded-lg flex items-center justify-center">
-              <span className="text-gray-600 font-medium">Lab Space Photo</span>
+            <div className="h-96 rounded-lg overflow-hidden">
+              <Image
+                src="/misc/charles_river.jpg"
+                alt="Lab Space Photo"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -252,7 +243,7 @@ export default function Misc() {
       </div> */}
 
       {/* Photo Gallery Placeholder */}
-      <div className="py-16">
+      {/* <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Photo Gallery</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -263,7 +254,7 @@ export default function Misc() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 } 

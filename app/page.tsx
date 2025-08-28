@@ -1,27 +1,54 @@
-import Image from "next/image";
+import NewsSection from "./components/NewsSection";
+import { getAllMarkdownFilesInDirectory, markdownToHtml } from '@/lib/markdown';
 
-export default function Home() {
+export default async function Home() {
+  // 获取新闻数据并转换为 HTML
+  const newsFiles = getAllMarkdownFilesInDirectory('news');
+  const newsItems = await Promise.all(
+    newsFiles.map(async (item) => ({
+      ...item,
+      content: await markdownToHtml(item.content)
+    }))
+  );
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-red-600 to-red-700">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Gong Lab
-            </h1>
-            <p className="mt-6 max-w-2xl mx-auto text-xl text-red-100">
-              Advancing the frontiers of computer science and artificial intelligence through innovative research and collaborative discovery.
-            </p>
-            <div className="mt-10">
-              <a
-                href="#research"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-red-700 bg-white hover:bg-gray-50 transition-colors duration-200"
-              >
-                Explore Our Research
-              </a>
+      <div className="relative h-[32rem] overflow-hidden">
+        {/* 左侧红色背景区域 - 直角梯形 */}
+        <div 
+          className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700"
+          style={{
+            clipPath: 'polygon(0 0, 60% 0, 50% 100%, 0 100%)'
+          }}
+        >
+          <div className="absolute inset-0 bg-black opacity-20"></div>
+          <div className="relative h-full flex items-center justify-start pl-8 sm:pl-12 lg:pl-16">
+            <div className="text-left">
+              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+                Gong Lab
+              </h1>
             </div>
+          </div>
+        </div>
+
+        {/* 右侧图片区域 - 直角梯形 */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            clipPath: 'polygon(50% 0, 100% 0, 100% 100%, 60% 100%)'
+          }}
+        >
+          <div 
+            className="w-full h-full bg-no-repeat"
+            style={{
+              backgroundImage: 'url(/bucds.jpg)',
+              backgroundSize: 'contain',
+              backgroundPosition: 'right',
+              backgroundColor: '#f3f4f6'
+            }}
+          >
+            {/* 可选：给图片添加轻微的遮罩效果 */}
+            {/* <div className="absolute inset-0 bg-black opacity-10"></div> */}
           </div>
         </div>
       </div>
@@ -34,7 +61,7 @@ export default function Home() {
               Research Overview
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
-              Our lab focuses on cutting-edge research in artificial intelligence, machine learning, and computer vision.
+              Our lab focuses on cutting-edge research in computer vision, machine learning, and foundational AI models.
             </p>
           </div>
 
@@ -55,7 +82,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="mt-4 text-gray-600">
-                  Developing novel algorithms and architectures for deep learning, reinforcement learning, and neural network optimization.
+                  Developing novel algorithms and architectures for deep learning, machine unlearning, and neural network optimization.
                 </p>
               </div>
             </div>
@@ -77,7 +104,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="mt-4 text-gray-600">
-                  Exploring advanced computer vision techniques for object detection, image segmentation, and visual understanding.
+                  Exploring computer vision problems in advanced foundation models, including image generation and vision language understanding.
                 </p>
               </div>
             </div>
@@ -94,11 +121,11 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">AI Systems</h3>
+                    <h3 className="text-lg font-medium text-gray-900">Foundational AI</h3>
                   </div>
                 </div>
                 <p className="mt-4 text-gray-600">
-                  Building intelligent systems that can reason, learn, and interact with humans in natural and efficient ways.
+                  Aligning foundational models with human developmental research to build more powerful AI systems.
                 </p>
               </div>
             </div>
@@ -106,8 +133,11 @@ export default function Home() {
         </div>
       </div>
 
+      {/* News Section */}
+      <NewsSection newsItems={newsItems} />
+
       {/* Lab Stats Section */}
-      <div className="py-16 bg-white">
+      {/* <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <div className="text-center">
@@ -128,10 +158,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Call to Action */}
-      <div className="bg-gray-50">
+      {/* <div className="bg-gray-50">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             <span className="block">Ready to join our research?</span>
@@ -156,7 +186,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
