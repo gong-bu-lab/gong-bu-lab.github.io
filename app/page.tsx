@@ -18,7 +18,7 @@ export default async function Home() {
         <div 
           className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700"
           style={{
-            clipPath: 'polygon(0 0, 60% 0, 50% 100%, 0 100%)'
+            clipPath: 'polygon(0 0, 65% 0, 55% 100%, 0 100%)'
           }}
         >
           <div className="absolute inset-0 bg-black opacity-20"></div>
@@ -35,7 +35,7 @@ export default async function Home() {
         <div 
           className="absolute inset-0"
           style={{
-            clipPath: 'polygon(50% 0, 100% 0, 100% 100%, 60% 100%)'
+            clipPath: 'polygon(55% 0, 100% 0, 100% 100%, 65% 100%)'
           }}
         >
           <div 
