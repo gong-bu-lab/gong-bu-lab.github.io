@@ -6,15 +6,17 @@ import Link from 'next/link';
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+
 interface EventPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function EventPage({ params }: EventPageProps) {
+export default async function EventPage({ params }: EventPageProps) {
+  const { slug } = await params;
   const events = getAllMarkdownFilesInDirectory('misc');
-  const event = events.find(e => e.data.slug === params.slug);
+  const event = events.find(e => e.data.slug === slug);
 
   if (!event) {
     notFound();
