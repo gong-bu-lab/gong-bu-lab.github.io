@@ -6,5 +6,5 @@ image: "/api/placeholder/300/300"
 category: "graduate"
 order: 1
 website: "/api/placeholder/300/300"
-nowAt: Tsinghua University
+nowAt: now@ Tsinghua University
 ---

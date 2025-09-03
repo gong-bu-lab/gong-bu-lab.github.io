@@ -2,8 +2,8 @@
 name: "Michael Wakeham"
 title: "Undergraduate Researcher"
 date: "2025 - Present"
-image: "/api/placeholder/300/300"
+image: "/people/michael.png"
 category: "undergraduate"
 order: 1
-website: "/api/placeholder/300/300"
+website: "https://mikewakeham.github.io/"
 ---

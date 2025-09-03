@@ -2,8 +2,8 @@
 name: "Joey Huang"
 title: "Undergraduate Researcher"
 date: "2025 - Present"
-image: "/api/placeholder/300/300"
+image: "/people/joey.png"
 category: "undergraduate"
 order: 1
-website: "/api/placeholder/300/300"
+website: "https://www.linkedin.com/in/joey-t-huang/"
 ---

@@ -2,8 +2,8 @@
 name: "Lingxiao Li"
 title: "Ph.D. Student"
 date: "2025 - Present"
-image: "/api/placeholder/300/300"
+image: "/people/lingxiao.jpg"
 category: "graduate"
 order: 1
-website: "/api/placeholder/300/300"
+website: "https://lingxiao-li.github.io/"
 ---
