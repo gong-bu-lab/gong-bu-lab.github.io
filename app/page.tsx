@@ -13,42 +13,27 @@ export default async function Home() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="relative h-[32rem] overflow-hidden">
-        {/* 左侧红色背景区域 - 直角梯形 */}
+      <div className="relative h-[40rem] w-full overflow-hidden">
+        {/* 背景图片 */}
         <div 
-          className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700"
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            clipPath: 'polygon(0 0, 65% 0, 55% 100%, 0 100%)'
+            backgroundImage: 'url(/bostonu.png)'
           }}
         >
-          <div className="absolute inset-0 bg-black opacity-20"></div>
-          <div className="relative h-full flex items-center justify-start pl-8 sm:pl-12 lg:pl-16">
-            <div className="text-left">
-              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+          {/* 渐变蒙版层 */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/50"></div> 
+          
+          {/* Lab 标题 */}
+          <div className="relative h-full flex items-center justify-center">
+            <div className="text-center">
+              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
                 Gong Lab
               </h1>
+              <p className="mt-4 text-xl text-white drop-shadow-md sm:text-2xl">
+                Boston University
+              </p>
             </div>
-          </div>
-        </div>
-
-        {/* 右侧图片区域 - 直角梯形 */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            clipPath: 'polygon(55% 0, 100% 0, 100% 100%, 65% 100%)'
-          }}
-        >
-          <div 
-            className="w-full h-full bg-no-repeat"
-            style={{
-              backgroundImage: 'url(/bucds.jpg)',
-              backgroundSize: 'contain',
-              backgroundPosition: 'right',
-              backgroundColor: '#f3f4f6'
-            }}
-          >
-            {/* 可选：给图片添加轻微的遮罩效果 */}
-            {/* <div className="absolute inset-0 bg-black opacity-10"></div> */}
           </div>
         </div>
       </div>
