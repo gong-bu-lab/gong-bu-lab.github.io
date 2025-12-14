@@ -6,5 +6,5 @@ date: "2024 - Present"
 image: "/people/boqing.png"
 category: "faculty"
 order: 1
-website: "http://boqinggong.info/"
+website: "https://boqinggong.github.io/"
 ---
