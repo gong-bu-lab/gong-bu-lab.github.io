@@ -5,9 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // GitHub Pages 不支持 Next.js 的图片优化
   },
-  // 如果你的仓库名不是 username.github.io，需要设置 basePath
-  // basePath: '/gonglab',
-  // assetPrefix: '/gonglab',
+  // 部署在 gong-bu-lab.github.io 根路径，不需要 basePath
 };
 
 export default nextConfig;
