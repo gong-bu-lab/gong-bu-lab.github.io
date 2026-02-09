@@ -6,5 +6,5 @@ pdf: "https://arxiv.org/abs/2411.17784"
 project: "#"
 teaser: "/paper/hypdae.png"
 year: "2025"
-order: 1
+order: 3
 ---

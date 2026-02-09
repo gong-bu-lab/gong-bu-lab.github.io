@@ -6,5 +6,5 @@ pdf: "https://arxiv.org/abs/2505.05456"
 project: "https://wenqi-wang20.github.io/SITE-Bench.github.io/"
 teaser: "/paper/sitebench.png"
 year: "2025"
-order: 1
+order: 2
 ---

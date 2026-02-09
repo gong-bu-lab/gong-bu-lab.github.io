@@ -212,6 +212,23 @@ export default function Misc() {
         </div>
       </div>
 
+      {/* Upload Guide */}
+      <div className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xl font-bold text-gray-900">
+            How to upload your profile/paper? Check this!{' '}
+            <a 
+              href="https://docs.google.com/document/d/1srr4I1-9mjXvyiVtJadRDr1m8k-Cslw2vKAXdmqP0Bo/edit?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-red-600 hover:text-red-700 underline"
+            >
+              [link]
+            </a>
+          </p>
+        </div>
+      </div>
+
       {/* Join Our Community */}
       {/* <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
