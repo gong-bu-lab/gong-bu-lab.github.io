@@ -21,10 +21,10 @@ export default function PublicationsClient({
 
   // Get publications for selected year
   const getFilteredPublications = () => {
-    if (selectedYear === 'all') {
-      return Object.values(publicationsByYear).flat();
-    }
-    return publicationsByYear[selectedYear] || [];
+    const pubs = selectedYear === 'all'
+      ? Object.values(publicationsByYear).flat()
+      : publicationsByYear[selectedYear] || [];
+    return pubs.sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
   };
 
   const filteredPublications = getFilteredPublications();
