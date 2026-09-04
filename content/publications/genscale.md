@@ -5,5 +5,6 @@ venue: "arXiv 2026"
 pdf: "https://arxiv.org/pdf/2609.00525"
 teaser: "/paper/genscale.pdf"
 year: "2026"
+date: "2026-09-01"
 order: 1
 ---

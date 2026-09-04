@@ -6,5 +6,6 @@ pdf: "https://arxiv.org/abs/2506.11253"
 project: "#"
 teaser: "/paper/unlearning.png"
 year: "2025"
+date: "2025-06-11"
 order: 4
 ---

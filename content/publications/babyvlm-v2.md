@@ -6,5 +6,6 @@ pdf: "https://arxiv.org/pdf/2512.10932"
 project: "https://shawnking98.github.io/BabyVLM-v2/"
 teaser: "/paper/babvlmv2.pdf"
 year: "2026"
+date: "2025-12-01"
 order: 3
 ---

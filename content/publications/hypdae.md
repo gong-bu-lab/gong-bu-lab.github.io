@@ -6,5 +6,6 @@ pdf: "https://arxiv.org/abs/2411.17784"
 project: "#"
 teaser: "/paper/hypdae.png"
 year: "2025"
+date: "2024-11-17"
 order: 8
 ---
