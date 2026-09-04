@@ -7,5 +7,5 @@ project: "https://yuanqing-ai.github.io/llm-hierarchy/"
 teaser: "/paper/hierarchical.png"
 year: "2025"
 date: "2025-05-25"
-order: 7
+order: 8
 ---
