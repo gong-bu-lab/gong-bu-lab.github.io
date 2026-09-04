@@ -54,9 +54,8 @@ export function getAllMarkdownFilesInDirectory(directory: string): MarkdownFile[
     })
     .filter((file): file is MarkdownFile => file !== null)
     .sort((a, b) => {
-      // Sort by date if available, otherwise by title
-      if (a.data.date && b.data.date) {
-        return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+      if (a.data.order != null && b.data.order != null) {
+        return a.data.order - b.data.order;
       }
       if (a.data.title && b.data.title) {
         return a.data.title.localeCompare(b.data.title);
