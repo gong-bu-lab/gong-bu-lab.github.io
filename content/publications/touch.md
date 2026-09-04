@@ -7,5 +7,5 @@ project: "https://max-whitton.github.io/Contrastive_Learning_From_Touch/"
 teaser: "/paper/touch.pdf"
 year: "2026"
 date: "2026-06-01"
-order: 2
+order: 3
 ---
