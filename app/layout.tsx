@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
+import Analytics from "./components/Analytics";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +34,9 @@ export default function RootLayout({
         <main className="min-h-screen">
           {children}
         </main>
+        {/* Private, cookie-free analytics. Config and notes: public/analytics.js */}
+        <Script src="/analytics.js" strategy="afterInteractive" />
+        <Analytics />
       </body>
     </html>
   );
